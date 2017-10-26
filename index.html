@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Marr College Computing | NitrexDesign</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400|Roboto+Slab:300,400|Roboto:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="lib/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+	<!-- JumboTron :) -->
+		<div class="jumbo" id="jumbo">
+			<div id="jumbo-content">
+				<p class="title">Welcome To Marr Computing</p>
+				<p class="text">At Marr computing we try to make the best out of computing, we achive this by creating interesting challenges. For instance we like to challenge our students to create a small website.</p>
+			</div>
+		</div>
+</body>
+<footer style="position: absolute; bottom: 0; left: 0;width: 100%;">
+		<p style="margin: auto;padding: 7px;border-top-right-radius: 25px;border-top-left-radius: 25px;background-color: white; width: 250px; text-align: center;user-select: none;font-family: 'Roboto Slab', serif;font-weight: 300;box-shadow: 0 0 5px 0 rgba(0,0,0,0.7);">Designed By NitrexDesign</p>
+</footer>
+</html>
+<script>
+$(document).ready(function () {
+    $('html').mousemove(function (e) {
+        parallax(e, document.getElementById('jumbo'), 1, -465);
+        parallax(e, document.getElementById('jumbo-content'), 4, -330);
+    });
+});
+
+function parallax(e, target, layer, top) {
+    var layer_coeff_x = 300 / layer;
+    var layer_coeff_y = 150 / layer;
+    var x = ($(window).width() - target.offsetWidth) / 2 - (e.pageX - ($(window).width() / 2)) / layer_coeff_x;
+    var y = ($(window).height() - target.offsetHeight) / 2 - (e.pageY - ($(window).height() / 2)) / layer_coeff_y;
+    $(target).offset({ top: y+top ,left : x });
+};
+</script>

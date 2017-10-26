@@ -1,0 +1,40 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.jumbo:before {
+  content: "";
+  position: absolute;
+  top: -40px;
+	left: -30px;
+	right: -10px;
+  z-index: -1;
+  display: block;
+  background: url("../images/PHP Stock.png");
+  width: 110%;
+  height: 400px;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+}
+#jumbo-content{
+	padding: 60px;
+	top: 50px;
+	position: absolute;
+}
+.jumbo .title{
+	font-family: 'Roboto Mono', monospace;
+	font-size: 50px;
+	font-weight: 300;
+	color: #fff;
+	filter: blur(0px);
+}
+.jumbo .text{
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #fff;
+	width: 60%;
+	filter: blur(0px);
+}
