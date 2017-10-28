@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Loading all the necessary css and javascript -->
 	<meta charset="UTF-8">
 	<title>Marr College Computing | NitrexDesign</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400|Roboto+Slab:300,400|Roboto:300,400" rel="stylesheet">
@@ -8,33 +9,96 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="resources/css/reload.css">
 </head>
-<body>
+<body style="display: none;background-color: #333;">
 	<!-- JumboTron :) -->
 		<div class="jumbo" id="jumbo">
 			<div id="jumbo-content">
 				<p class="title">Welcome To Marr Computing</p>
-				<p class="text">At Marr computing we try to make the best out of computing, we achive this by creating interesting challenges. For instance we like to challenge our students to create a small website.</p>
+				<p class="text">Marr College Computing Department.</p>
+			</div>
+		</div>
+		<div style="margin-top: 220px"></div>
+		<div class="break-between-top-and-body"></div>
+		<p class="r-text-heading" style="color:#fff;margin-left:25px;">Languages We Learn.</p>
+		<div class="row">
+			<div class="col-xs">
+				<div class="r-card r-card-accent">
+					<div class="r-card-head">
+						<img height="75px" src="https://hackr.io/tutorials/learn-visual-basic-vb/logo/visual-basic-vb_logo" alt="Visual Basic Logo" title="Visual Basic">
+					</div>
+					<div class="r-card-head-break"></div>
+					<div class="r-card-body">
+						<p class="r-card-text">Visual Basic. Still Used. Noone Really Cared. C# &amp; C++ Are Better. VB is basically all of microsoft. from the ui experience of windows to the mathamatical operations of excel. it's everywhere. but it's slowly being pushed aside by C# &amp; C++</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs">
+				<div class="r-card r-card-accent">
+					<div class="r-card-head">
+						<img height="75px" src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" alt="HTML5 Logo" title="HTML5">
+					</div>
+					<div class="r-card-head-break"></div>
+					<div class="r-card-body">
+						<p class="r-card-text">We learn html5 in computing to give 1st, 2nd and 3rd year students the ability to learn about websites &amp; a little bit about how the layout of a website can have a huge effect on it's usability.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs">
+				<div class="r-card r-card-accent">
+					<div class="r-card-head">
+						<img height="75px" src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP7.0 Logo" title="PHP">
+					</div>
+					<div class="r-card-head-break"></div>
+					<div class="r-card-body">
+						<p class="r-card-text">We don't learn PHP until 4th year (<span style="text-decoration: underline;pointer-events: auto;" title="This should be learned earlier i dont know why its not PHP is a fantastic language. if you have time go and learn it">Note</span>) but it is a fantastic language to learn because it teaches the basics of DOM and how to handle data and dynamically load data.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs">
+				<div class="r-card r-card-accent">
+					<div class="r-card-head">
+						<img height="75px" src="https://cdn.tutsplus.com/net/uploads/2013/05/es6.jpg" alt="EcmaScript Logo" title="EcmaScript">
+					</div>
+					<div class="r-card-head-break"></div>
+					<div class="r-card-body">
+						<p class="r-card-text">EcmaScript (Javascript) is taught in 4th year aswell and is the most used language in web application and now even desktop applications are reeping the benefits of javascript. it started as one person's project which took them 7 days to write and now it is used in everything from this school project to nasa satalites along side python. <a href="https://developers.google.com" target="_blank">Google's</a> Entire Platform is build on javascript and python. it is used in over 70% of all websites world-wide. Learn it</p>
+					</div>
+				</div>
 			</div>
 		</div>
 </body>
-<footer style="position: absolute; bottom: 0; left: 0;width: 100%;">
-		<p style="margin: auto;padding: 7px;border-top-right-radius: 25px;border-top-left-radius: 25px;background-color: white; width: 250px; text-align: center;user-select: none;font-family: 'Roboto Slab', serif;font-weight: 300;box-shadow: 0 0 5px 0 rgba(0,0,0,0.7);">Designed By NitrexDesign</p>
+<!-- my nice footer :) -->
+<footer style="position: fixed; bottom: 0; left: 0;width: 100%;padding-top: 5px;">
+		<p id="dbnd" style="padding: 7px;border-top-right-radius: 25px;background-color: #111; color: #fff; width: 250px; text-align: center;user-select: none;font-family: 'Roboto Slab', serif;font-weight: 300;box-shadow: 0 0 5px 0 rgba(0,0,0,0.7);" onclick="hidenvisit('dbnd', 'https://www.nitrexdesign.co.uk')">Designed By NitrexDesign</p>
 </footer>
 </html>
 <script>
+	// JQuery (A Javascript Library) Checking if the DOM is ready then
+	// it is able to run the check on if the mouse has moved
+	// then it runs the parallax scrolling effect seen at the top
 $(document).ready(function () {
     $('html').mousemove(function (e) {
-        parallax(e, document.getElementById('jumbo'), 1, -465);
-        parallax(e, document.getElementById('jumbo-content'), 4, -330);
+      parallax(e, document.getElementById('jumbo-content'), 5, -305);
     });
+    // FadeIn The Page When DOM is Ready
 });
-
+// The parallax script
 function parallax(e, target, layer, top) {
     var layer_coeff_x = 300 / layer;
-    var layer_coeff_y = 150 / layer;
+    var layer_coeff_y = 300 / layer;
     var x = ($(window).width() - target.offsetWidth) / 2 - (e.pageX - ($(window).width() / 2)) / layer_coeff_x;
     var y = ($(window).height() - target.offsetHeight) / 2 - (e.pageY - ($(window).height() / 2)) / layer_coeff_y;
-    $(target).offset({ top: y+top ,left : x });
+    $(target).offset({ top: y+top ,left : x+100 });
 };
+function hidenvisit(id, url) {
+	$('#'+id).fadeOut(500);
+	setTimeout(function () {window.open(url)}, 750);
+}
+$(window).on('load',function () {
+	$('body').fadeIn(1000);
+})
 </script>
+<script src="legitripple/js/ripple.js"></script>
+<script src="resources/js/reload.js"></script>
