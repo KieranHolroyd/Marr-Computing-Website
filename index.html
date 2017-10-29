@@ -24,7 +24,7 @@
 		<p class="r-text-heading" style="color:#fff;margin-left:25px;">Languages We Learn.</p>
 		<div class="row">
 			<div class="col-xs">
-				<div class="r-card r-card-accent">
+				<div class="r-card r-card-accent" onclick="openmodal('vb')">
 					<div class="r-card-head">
 						<img height="75px" src="https://hackr.io/tutorials/learn-visual-basic-vb/logo/visual-basic-vb_logo" alt="Visual Basic Logo" title="Visual Basic">
 					</div>
@@ -68,6 +68,11 @@
 				</div>
 			</div>
 		</div>
+		<div class="r-modal" id="vb">
+			<div class="r-modal-content">
+				test
+			</div>
+		</div>
 </body>
 <!-- my nice footer :) -->
 <footer style="position: fixed; bottom: 0; left: 0;width: 100%;padding-top: 5px;">
@@ -86,11 +91,13 @@ $(document).ready(function () {
 });
 // The parallax script
 function parallax(e, target, layer, top) {
+	var left=100;
     var layer_coeff_x = 300 / layer;
     var layer_coeff_y = 300 / layer;
     var x = ($(window).width() - target.offsetWidth) / 2 - (e.pageX - ($(window).width() / 2)) / layer_coeff_x;
     var y = ($(window).height() - target.offsetHeight) / 2 - (e.pageY - ($(window).height() / 2)) / layer_coeff_y;
-    $(target).offset({ top: y+top ,left : x+100 });
+    if($(window).width()<500){left=0;}
+    $(target).offset({ top: y+top ,left : x+left });
 };
 function hidenvisit(id, url) {
 	$('#'+id).fadeOut(500);
