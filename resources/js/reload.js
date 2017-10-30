@@ -41,7 +41,9 @@ $('a[href*="#"]')
   // Modals
   function openmodal(id) {
     $('#'+id).fadeIn(400);
+    $("body").addClass("modal-open");
   }
   function closemodal(id) {
     $('#'+id).delay(150).fadeOut(300);
+    $("body").delay(450).removeClass("modal-open")
   }
